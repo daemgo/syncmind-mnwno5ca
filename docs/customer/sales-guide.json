@@ -1,0 +1,177 @@
+{
+  "salesGuide": {
+    "timing": {
+      "timingStage": "接触探索期",
+      "entryStrategy": "从订单可视化和批次追溯这两个具体场景切入，讲技术参数追溯的价值——出问题能快速定位到哪台设备、哪个批次、哪个员工，老板技术出身会有共鸣；别说管理升级这种虚词",
+      "urgency": "中"
+    },
+    "stageAdvice": {
+      "focus": "先通过筛选问题摸清现状（订单怎么跟、质量问题怎么处理），不急着推功能，让客户自己说出痛点",
+      "approach": "带同行案例去聊，尤其是同行怎么用系统解决批次客诉的；老板吃技术这套，聊工艺参数和设备管理的具体场景比聊概念管用；先推轻量试用，降低决策压力",
+      "risks": "老板技术出身容易把话题带偏，聊设备参数比聊商务多；上来就推全方案容易把客户吓跑或拖长决策"
+    },
+    "competitors": [
+      {
+        "name": "现状竞对（Excel+电话+微信）",
+        "threat": "高",
+        "strengths": ["零成本，员工熟悉，无学习门槛", "灵活度高，现场随机应变能力强"],
+        "weaknesses": ["订单多了就乱，插单全靠记忆", "批次质量问题查不清楚，客诉应对被动", "数据无法积累，无法做分析改进"],
+        "counterStrategy": "用具体场景（'假如客户问你们那批货现在到哪了，你们多久能回答？'）让客户自己意识到现状瓶颈"
+      },
+      {
+        "name": "通用ERP系统（用友/金蝶/管家婆）",
+        "threat": "中",
+        "strengths": ["品牌认知度高，客户接受度高", "功能模块全，财务+进销存+生产都能覆盖", "本地部署，数据安全感知好"],
+        "weaknesses": ["配置复杂，小企业用不上大部分功能", "实施周期长，没专职IT根本撑不住"],
+        "counterStrategy": "强调'你们这种按件计费、批次追溯的场景，通用ERP要配很久才能用起来，我们开箱即用'"
+      },
+      {
+        "name": "本地部署MES系统",
+        "threat": "低",
+        "strengths": ["数据完全自主可控", "大型企业客户信任度高"],
+        "weaknesses": ["投入大（10万起步），小企业难以承受", "实施周期3-6个月，需要专人对接维护"],
+        "counterStrategy": "这种方案投入大、周期长，你们规模上这类项目会拖垮，先试试轻量SaaS，三个月能看到效果再决定"
+      }
+    ],
+    "decisionChain": {
+      "decisionMakers": [
+        {
+          "name": "李进汉",
+          "department": "总经理/法定代表人",
+          "reason": "公司创始人，技术出身，拥有多项专利，最终拍板人；对技术方案有一定判断力，不会完全被销售牵着走"
+        }
+      ],
+      "influencers": [
+        {
+          "name": "生产主管",
+          "department": "生产部",
+          "reason": "实际使用系统的人，订单怎么排、进度怎么跟都是他们的事；老板会参考他们的反馈"
+        },
+        {
+          "name": "质检负责人",
+          "department": "品管部",
+          "reason": "质量追溯直接关系到质检工作效率，他们的接受度影响系统实际落地效果"
+        }
+      ],
+      "blockers": [
+        {
+          "name": "操作工人",
+          "department": "生产一线",
+          "reason": "习惯纸质记录和口头汇报，数字化录入增加工作负担，可能消极配合甚至抵触"
+        }
+      ]
+    },
+    "avoidTopics": [
+      "企业管理升级、数字化转型这类词——老板技术出身，听概念会反感，讲具体场景和回报才有用",
+      "IT团队建设或信息化建设规划——企业没专职IT，谈这个不现实",
+      "贬低现有工艺或管理方式——老板多年技术积累都在里面，要讲叠加价值，不要讲替换"
+    ],
+    "interviewGuide": {
+      "fromRequirements": [
+        {
+          "questionId": "PQ-001",
+          "stage": "screening",
+          "question": "目前订单和生产进度是怎么跟的？用Excel还是别的工具？",
+          "priority": "必问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-002",
+          "stage": "screening",
+          "question": "客户投诉或批次质量问题发生时，现在是怎么查原因的？",
+          "priority": "必问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-003",
+          "stage": "screening",
+          "question": "今年在数字化或管理系统这块预算大概是什么量级？",
+          "priority": "必问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-004",
+          "stage": "screening",
+          "question": "希望什么时候能看到效果？今年内要上线吗？",
+          "priority": "必问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-005",
+          "stage": "screening",
+          "question": "除了您之外，这个项目还需要谁参与评估和拍板？",
+          "priority": "必问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-006",
+          "stage": "deep-dive",
+          "question": "打样订单和量产订单目前是怎么分开管理的？打样转量产的过程有没有数据关联？",
+          "priority": "选问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-007",
+          "stage": "deep-dive",
+          "question": "设备（真空镀膜机）的稼动率和故障情况目前是怎么记录的？有没有出现过设备问题影响订单交付的情况？",
+          "priority": "选问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-008",
+          "stage": "deep-dive",
+          "question": "现在工厂里有没有扫码设备（如PDA）？员工用手机熟练吗？",
+          "priority": "选问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-009",
+          "stage": "deep-dive",
+          "question": "现在一共有多少台镀膜设备？每台设备大概每天能处理多少件？",
+          "priority": "选问",
+          "status": "pending"
+        },
+        {
+          "questionId": "PQ-010",
+          "stage": "closing",
+          "question": "我们今天聊的这几个问题，您觉得哪个是现在最想解决的？",
+          "priority": "选问",
+          "status": "pending"
+        }
+      ]
+    },
+    "tracking": {
+      "coverageRate": 0,
+      "coveredCount": 0,
+      "totalCount": 10,
+      "pendingCritical": ["PQ-001", "PQ-002", "PQ-003", "PQ-004", "PQ-005"]
+    },
+    "nextActions": [
+      {
+        "action": "安排首次拜访，重点摸清订单跟踪现状和质量追溯痛点（PQ-001、PQ-002）",
+        "deadline": "2026-04-30",
+        "owner": "销售"
+      },
+      {
+        "action": "确认决策链：老板是否需要其他人参与评估（PQ-005）",
+        "deadline": "2026-04-30",
+        "owner": "销售"
+      },
+      {
+        "action": "收集同行业PVD镀膜企业数字化案例，作为拜访时的破冰素材",
+        "deadline": "2026-04-20",
+        "owner": "售前"
+      },
+      {
+        "action": "准备轻量级Demo环境，针对订单追踪+批次追溯两个核心场景",
+        "deadline": "2026-04-25",
+        "owner": "售前"
+      }
+    ],
+    "metadata": {
+      "generatedAt": "2026-04-13T00:00:00Z",
+      "updatedAt": "2026-04-13T00:00:00Z",
+      "version": "1.0"
+    }
+  }
+}
