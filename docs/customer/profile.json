@@ -1,0 +1,81 @@
+{
+  "companyName": "温州市国彩科技有限公司",
+  "shortName": "",
+  "summary": "温州市一家小型科技企业，公开信息有限，主营业务及产品暂无公开数据。",
+  "industry": "科技/软件",
+  "subIndustry": "",
+  "scale": "微型-小型",
+  "mainBusiness": "",
+  "products": [],
+  "targetCustomers": [],
+  "businessModel": "",
+  "rating": "",
+  "tags": ["公开信息有限", "需进一步核实"],
+  "website": null,
+  "slogan": null,
+  "isListed": false,
+  "stockCode": null,
+  "revenueScale": null,
+  "registration": {
+    "registeredName": null,
+    "registeredCapital": null,
+    "paidCapital": null,
+    "establishedDate": null,
+    "legalRepresentative": null,
+    "businessStatus": null,
+    "shareholders": [],
+    "branchCount": null,
+    "interpretation": "搜索结果中无该企业工商信息，温州地区存在多家名称含'彩'字企业但均非目标企业，建议核实企业准确名称后重新查询。",
+    "organizationType": "",
+    "keyFindings": ["公开渠道未检索到该企业工商信息", "企业名称可能存在变体或新设不久", "建议与客户确认企业全称以便进一步查询"]
+  },
+  "organization": {
+    "type": "",
+    "decisionChain": "",
+    "keyPersons": [],
+    "salesStrategy": "建议先通过客户直接了解企业主营业务、组织架构和采购决策人，再制定针对性销售策略。"
+  },
+  "timing": {
+    "phase": "",
+    "analysisBasis": [],
+    "entryStrategy": "因公开信息不足，建议首次拜访以了解企业基本情况为主，收集工商信息后更新档案。",
+    "urgency": "待核实企业信息后再判断时机。"
+  },
+  "hiring": {
+    "keySignals": []
+  },
+  "competition": {
+    "industryRank": "",
+    "marketShare": "",
+    "mainCompetitors": ["温州联彩智能科技有限公司", "温州欧彩数码科技有限公司", "浙江智彩科技有限公司"],
+    "knownClients": []
+  },
+  "riskAndPolicy": {
+    "legal": {
+      "lawsuitCount": null,
+      "executedPerson": false,
+      "dishonestPerson": false,
+      "businessAnomalies": [],
+      "equityFreeze": false
+    },
+    "policy": {
+      "isSpecializedSME": false,
+      "smeLevel": "",
+      "isHighTech": false,
+      "digitalTransformation": false,
+      "esgGreen": false
+    }
+  },
+  "painPoints": [],
+  "opportunities": [],
+  "analysisPath": "C",
+  "confidence": 0,
+  "metadata": {
+    "createdAt": "2026-04-13",
+    "updatedAt": "2026-04-13",
+    "createdBy": "AI",
+    "version": "1.0",
+    "sources": ["web_search"],
+    "confidence": 0.15
+  }
+}
