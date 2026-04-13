@@ -1,53 +1,71 @@
 {
   "companyName": "温州市国彩真空科技有限公司",
-  "shortName": "",
-  "summary": "温州市一家小型科技企业，主营真空科技，公开信息有限，主营业务及产品暂无公开数据。",
-  "industry": "科技/软件",
-  "subIndustry": "",
-  "scale": "微型-小型",
-  "mainBusiness": "",
-  "products": [],
-  "targetCustomers": [],
-  "businessModel": "",
+  "shortName": "国彩真空",
+  "summary": "浙南地区规模最大的PVD镀膜加工服务商之一，2015年开始经营，2022年被评为浙江省科技型中小企业。拥有3项专利，生产面积约4000平方米，年加工能力约200万件，为五金、餐具、渔具、3C配件等行业提供表面处理加工服务。",
+  "industry": "制造业",
+  "subIndustry": "有色金属冶炼和压延加工业 / 表面处理",
+  "scale": "小型企业（约60人）",
+  "mainBusiness": "PVD真空镀膜加工服务，包括产品模具治具设计开发、表面UV真空电镀、PVD离子镀膜、PVD磁控溅射镀膜、高端抛光拉丝、超硬质纳米防护涂层等",
+  "products": [
+    "PVD离子镀膜加工",
+    "PVD磁控溅射镀膜加工",
+    "表面UV真空电镀",
+    "高端抛光拉丝",
+    "超硬质纳米防护涂层",
+    "产品模具治具设计开发"
+  ],
+  "targetCustomers": ["五金产品厂商", "不锈钢餐具厂商", "渔具厂商", "3C配件厂商", "汽摩配件厂商", "建材卫浴厂商", "玻璃饰品厂商"],
+  "businessModel": "B2B加工服务型，按件收取镀膜加工费，来料加工模式，打样周期4-7天，年加工能力约200万件",
   "rating": "",
-  "tags": ["公开信息有限", "需进一步核实"],
-  "website": null,
+  "tags": ["浙江省科技型中小企业", "PVD镀膜", "浙南地区规模领先", "3项专利"],
+  "website": "https://www.gczkkj.com/",
   "slogan": null,
   "isListed": false,
   "stockCode": null,
   "revenueScale": null,
   "registration": {
-    "registeredName": null,
-    "registeredCapital": null,
+    "registeredName": "温州市国彩真空科技有限公司",
+    "registeredCapital": "200万人民币",
     "paidCapital": null,
-    "establishedDate": null,
-    "legalRepresentative": null,
-    "businessStatus": null,
+    "establishedDate": "2017-11-19",
+    "legalRepresentative": "李进汉",
+    "businessStatus": "存续",
     "shareholders": [],
     "branchCount": null,
-    "interpretation": "搜索结果中无该企业工商信息，温州地区存在多家名称含'彩'字企业但均非目标企业，建议核实企业准确名称后重新查询。",
-    "organizationType": "",
-    "keyFindings": ["公开渠道未检索到该企业工商信息", "企业名称可能存在变体或新设不久", "建议与客户确认企业全称以便进一步查询"]
+    "interpretation": "企业曾用名'瑞安市国彩五金制品有限公司'，2015年7月开始实际经营，2017年11月正式注册成立。注册地址在瑞安市塘下镇，登记机关为瑞安市市场监督管理局。",
+    "organizationType": "有限责任公司（自然人投资或控股）",
+    "keyFindings": [
+      "统一社会信用代码：91330381MA299R6T7H",
+      "曾用名：瑞安市国彩五金制品有限公司",
+      "注册地址：浙江省温州市瑞安市塘下镇中南村标准厂房一幢3-4楼",
+      "拥有3项专利、2个商标、4项行政许可"
+    ]
   },
   "organization": {
-    "type": "",
-    "decisionChain": "",
-    "keyPersons": [],
-    "salesStrategy": "建议先通过客户直接了解企业主营业务、组织架构和采购决策人，再制定针对性销售策略。"
+    "type": "小型民营制造企业",
+    "decisionChain": "法定代表人/实际控制人李进汉应为最终决策人，技术团队约8人，品管团队约4人",
+    "keyPersons": [
+      {
+        "name": "李进汉",
+        "role": "法定代表人/总经理",
+        "note": "公司创始人，技术出身，拥有多项专利发明人"
+      }
+    ],
+    "salesStrategy": "该企业为加工服务型中小企业，IT需求可能来自生产管理数字化（订单管理、排产、质检追溯等），建议以生产数字化、管理效率提升为切入点。也可关注其客户管理和供应链协同需求。"
   },
   "timing": {
     "phase": "",
     "analysisBasis": [],
-    "entryStrategy": "因公开信息不足，建议首次拜访以了解企业基本情况为主，收集工商信息后更新档案。",
-    "urgency": "待核实企业信息后再判断时机。"
+    "entryStrategy": "建议通过行业活动或直接拜访接触，了解其数字化现状和痛点。该企业已运营近10年，处于稳定发展阶段，可能面临管理升级需求。",
+    "urgency": "待首次拜访后判断"
   },
   "hiring": {
     "keySignals": []
   },
   "competition": {
-    "industryRank": "",
+    "industryRank": "浙南地区规模最大的PVD镀膜加工服务商之一",
     "marketShare": "",
-    "mainCompetitors": ["温州联彩智能科技有限公司", "温州欧彩数码科技有限公司", "浙江智彩科技有限公司"],
+    "mainCompetitors": ["温州联彩智能科技有限公司", "温州欧彩数码科技有限公司", "台州地区PVD镀膜加工厂"],
     "knownClients": []
   },
   "riskAndPolicy": {
@@ -60,22 +78,27 @@
     },
     "policy": {
       "isSpecializedSME": false,
-      "smeLevel": "",
+      "smeLevel": "科技型中小企业",
       "isHighTech": false,
       "digitalTransformation": false,
       "esgGreen": false
     }
   },
   "painPoints": [],
-  "opportunities": [],
-  "analysisPath": "C",
-  "confidence": 0,
+  "opportunities": [
+    "年加工能力200万件，订单管理、排产调度、质量追溯等数字化需求可能存在",
+    "小型科技企业，人员规模60人左右，可能需要轻量级管理工具",
+    "PVD镀膜行业竞争加剧，可能关注效率提升和成本管控",
+    "打样周期4-7天，缩短交付周期可能成为竞争差异化方向"
+  ],
+  "analysisPath": "B",
+  "confidence": 0.6,
   "metadata": {
     "createdAt": "2026-04-13",
     "updatedAt": "2026-04-13",
     "createdBy": "AI",
-    "version": "1.0",
-    "sources": ["web_search"],
-    "confidence": 0.15
+    "version": "1.1",
+    "sources": ["web_search", "company_website", "tianyan"],
+    "confidence": 0.65
   }
 }
