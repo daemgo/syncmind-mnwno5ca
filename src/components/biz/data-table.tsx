@@ -24,7 +24,7 @@ export interface ColumnConfig<T> {
   key: keyof T & string
   label: string
   /** Determines cell rendering: badge (colored), money (¥ formatted), date, mono (monospace) */
-  type?: "text" | "badge" | "money" | "date" | "mono"
+  type?: "text" | "badge" | "money" | "date" | "mono" | "number"
   /** For badge columns: dict ID to look up label + color */
   dictId?: string
   align?: "left" | "center" | "right"
@@ -75,6 +75,8 @@ function renderCellContent<T extends { id: string }>(row: T, col: ColumnConfig<T
       return <span className="text-muted-foreground">{String(value ?? "")}</span>
     case "mono":
       return <span className="font-mono text-xs">{String(value ?? "")}</span>
+    case "number":
+      return <span className="tabular-nums">{Number(value ?? 0).toLocaleString()}</span>
     default:
       return String(value ?? "")
   }

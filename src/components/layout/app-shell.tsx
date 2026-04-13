@@ -32,7 +32,7 @@ export function AppShell({ title, items, children }: AppShellProps) {
       {/* Mobile sidebar (Sheet overlay) */}
       {isMobile && (
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetContent side="left" className="w-60 p-0" showCloseButton={false}>
+          <SheetContent side="left" className="w-60 p-0">
             <Sidebar
               title={title}
               items={items}
