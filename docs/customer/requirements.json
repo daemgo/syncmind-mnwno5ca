@@ -1,5 +1,5 @@
 {
-  "currentVersion": "v0.1",
+  "currentVersion": "v0.2",
   "status": "draft",
   "versions": [],
   "current": {
@@ -188,6 +188,21 @@
         "firstVersion": "v0.1",
         "lastUpdated": "v0.1",
         "history": []
+      },
+      {
+        "id": "REQ-012",
+        "category": "business",
+        "title": "PVD镀膜能力与案例展示平台",
+        "description": "需要一个对外展示镀膜工艺能力、加工案例和产品效果的平台，用于获客和品牌展示。展示内容包括：不同镀膜类型（离子镀/磁控溅射/UV电镀等）的效果对比、典型行业应用案例（渔具/餐具/3C配件等）、合作客户产品图册、设备与工艺介绍。可作为官网或独立展示页面，降低销售沟通成本。",
+        "priority": "should",
+        "confidence": "low",
+        "source": { "type": "user-input", "detail": "用户明确提出需要展示产品平台", "raw": "添加需求：客户需要一个展示产品的平台" },
+        "status": "active",
+        "module": "营销展示",
+        "relatedPainPoints": ["营销获客：缺乏线上展示渠道，客户认知门槛高"],
+        "firstVersion": "v0.2",
+        "lastUpdated": "v0.2",
+        "history": []
       }
     ],
     "users": [
@@ -254,7 +269,7 @@
         }
       ],
       "priorityMatrix": [
-        { "must": ["REQ-001", "REQ-002", "REQ-003", "REQ-006", "REQ-007", "REQ-010"], "should": ["REQ-004", "REQ-005", "REQ-008", "REQ-011"], "could": ["REQ-009"] }
+        { "must": ["REQ-001", "REQ-002", "REQ-003", "REQ-006", "REQ-007", "REQ-010"], "should": ["REQ-004", "REQ-005", "REQ-008", "REQ-011", "REQ-012"], "could": ["REQ-009"] }
       ]
     },
     "constraints": {
@@ -440,6 +455,20 @@
         "expectedDirection": "明确优先级→聚焦一期MVP；多需求并列→引导排优先级",
         "targetPerson": "老板（李进汉）",
         "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-011",
+        "category": "业务",
+        "priority": "选问",
+        "stage": "screening",
+        "question": "目前官网或者线上展示渠道有吗？客户主要是通过什么方式了解到你们的？",
+        "purpose": "了解当前展示渠道，评估REQ-012（展示平台）的必要性",
+        "expectedDirection": "无展示渠道→展示平台是强需求；有简单官网→可升级为能力展示页；主要靠熟人介绍→展示平台可拓展获客来源",
+        "targetPerson": "老板（李进汉）或销售负责人",
+        "relatedNeedIds": ["REQ-012"],
         "status": "pending",
         "answer": null,
         "resolvedInVersion": null
