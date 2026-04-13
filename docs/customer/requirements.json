@@ -40,21 +40,6 @@
         "history": []
       },
       {
-        "id": "REQ-002",
-        "category": "business",
-        "title": "镀膜工艺质量追溯",
-        "description": "PVD镀膜加工涉及多道工艺（镀前处理→离子镀/磁控溅射→镀后处理），批次质量问题需要能追溯到具体工艺参数、设备和操作人员，以应对客户投诉和持续改进。",
-        "priority": "must",
-        "confidence": "low",
-        "source": { "type": "profile-inference", "detail": "PVD离子镀/磁控溅射工艺涉及多参数控制（真空度/温度/时间/气体流量），出现批次不良时需要追溯工艺链，推演质量追溯为必须需求", "raw": null },
-        "status": "active",
-        "module": "质量管理",
-        "relatedPainPoints": ["质量管理：质检靠人工、追溯困难、客诉处理慢"],
-        "firstVersion": "v0.1",
-        "lastUpdated": "v0.1",
-        "history": []
-      },
-      {
         "id": "REQ-003",
         "category": "business",
         "title": "打样周期与交期管理",
@@ -121,7 +106,7 @@
         "description": "各工艺节点记录质检结果（合格/不合格/返工），系统生成批次编码关联工单、设备、操作人员、关键工艺参数（真空度/温度/时间），支持扫码查询历史批次。",
         "priority": "must",
         "confidence": "low",
-        "source": { "type": "profile-inference", "detail": "REQ-002质量追溯的功能拆解，满足批次追溯和客诉处理需求", "raw": null },
+        "source": { "type": "profile-inference", "detail": "批次追溯和客诉处理需求的功能拆解", "raw": null },
         "status": "active",
         "module": "质量管理",
         "relatedPainPoints": ["质量管理：质检靠人工、追溯困难、客诉处理慢"],
@@ -269,7 +254,7 @@
         }
       ],
       "priorityMatrix": [
-        { "must": ["REQ-001", "REQ-002", "REQ-003", "REQ-006", "REQ-007", "REQ-010"], "should": ["REQ-004", "REQ-005", "REQ-008", "REQ-011", "REQ-012"], "could": ["REQ-009"] }
+        { "must": ["REQ-001", "REQ-003", "REQ-006", "REQ-007", "REQ-010"], "should": ["REQ-004", "REQ-005", "REQ-008", "REQ-011", "REQ-012"], "could": ["REQ-009"] }
       ]
     },
     "constraints": {
@@ -339,10 +324,10 @@
         "priority": "必问",
         "stage": "screening",
         "question": "客户投诉或批次质量问题发生时，现在是怎么查原因的？",
-        "purpose": "验证REQ-002（质量追溯）的紧迫程度，了解当前追溯能力",
+        "purpose": "验证批次追溯（REQ-007）的紧迫程度，了解当前追溯能力",
         "expectedDirection": "若追溯困难、耗时很长，说明该需求must级别高；若已有基本台账可快速定位，则优先级可降低",
         "targetPerson": "质检负责人或老板",
-        "relatedNeedIds": ["REQ-002", "REQ-007"],
+        "relatedNeedIds": ["REQ-007"],
         "status": "pending",
         "answer": null,
         "resolvedInVersion": null
@@ -477,7 +462,7 @@
     "completionRate": {
       "overall": 22,
       "byCategory": { "business": 20, "functional": 20, "technical": 20 },
-      "blockers": ["REQ-001（订单全流程可视化）confidence=low，must级别需求待首访验证", "REQ-002（镀膜工艺质量追溯）confidence=low，must级别需求待首访验证", "REQ-003（打样周期与交期管理）confidence=low，must级别需求待首访验证"]
+      "blockers": ["REQ-001（订单全流程可视化）confidence=low，must级别需求待首访验证", "REQ-003（打样周期与交期管理）confidence=low，must级别需求待首访验证"]
     }
   }
 }
