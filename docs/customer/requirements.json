@@ -1,0 +1,454 @@
+{
+  "currentVersion": "v0.1",
+  "status": "draft",
+  "versions": [],
+  "current": {
+    "salesInput": {
+      "salesPerson": "",
+      "lastUpdated": "2026-04-13",
+      "overallAssessment": {
+        "customerIntent": "",
+        "projectUrgency": "",
+        "budgetSituation": "",
+        "competitionStatus": "",
+        "winProbability": "",
+        "keyObstacles": [],
+        "confidenceLevel": ""
+      },
+      "keyPersons": [],
+      "realNeeds": { "explicitNeeds": [], "implicitNeeds": [], "suspectedNeeds": [] },
+      "decisionFactors": { "primaryFactor": "", "secondaryFactors": [], "dealBreakers": [] },
+      "notes": "",
+      "concerns": [],
+      "suggestions": []
+    },
+    "sources": { "meetings": [], "documents": [], "communications": [], "observations": [] },
+    "needs": [
+      {
+        "id": "REQ-001",
+        "category": "business",
+        "title": "订单全流程可视化",
+        "description": "来料加工模式下，客户订单（来料接收→工艺排程→镀膜加工→质检出货）全流程节点需要透明可见，跟单员和客户均能随时查看当前进度，避免靠电话/微信反复确认。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "B2B来料加工模式，年加工200万件，订单靠人工跟踪，推演核心痛点为订单进度不透明", "raw": null },
+        "status": "active",
+        "module": "订单管理",
+        "relatedPainPoints": ["订单管理：订单靠电话/微信、交期难跟踪"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-002",
+        "category": "business",
+        "title": "镀膜工艺质量追溯",
+        "description": "PVD镀膜加工涉及多道工艺（镀前处理→离子镀/磁控溅射→镀后处理），批次质量问题需要能追溯到具体工艺参数、设备和操作人员，以应对客户投诉和持续改进。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "PVD离子镀/磁控溅射工艺涉及多参数控制（真空度/温度/时间/气体流量），出现批次不良时需要追溯工艺链，推演质量追溯为必须需求", "raw": null },
+        "status": "active",
+        "module": "质量管理",
+        "relatedPainPoints": ["质量管理：质检靠人工、追溯困难、客诉处理慢"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-003",
+        "category": "business",
+        "title": "打样周期与交期管理",
+        "description": "打样周期4-7天是核心竞争力之一，需管理打样订单与量产订单的优先级和排期，避免插单导致交付延期；同时客户交期承诺需要准确可追踪。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "打样周期4-7天，年加工能力200万件，多客户并行排产，缩短交期是差异化方向，推演排产和交期管理为核心需求", "raw": null },
+        "status": "active",
+        "module": "生产管理",
+        "relatedPainPoints": ["生产管理：排产靠Excel、进度不透明、插单混乱"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-004",
+        "category": "business",
+        "title": "真空镀膜设备稼动率监控",
+        "description": "真空镀膜设备价值高、启停成本大，需监控设备运行时长、停机原因和OEE，支撑预防性维护和产能规划，减少突发故障导致的订单延误。",
+        "priority": "should",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "PVD真空镀膜设备为核心资产，故障突发直接影响交付承诺，结合行业痛点库的设备管理需求推演", "raw": null },
+        "status": "active",
+        "module": "设备管理",
+        "relatedPainPoints": ["设备管理：故障突发、维护靠经验、OEE低"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-005",
+        "category": "business",
+        "title": "按件计费成本核算",
+        "description": "按件收取加工费，需按订单/批次统计加工数量、不良品数量和加工费，支持按产品类型（离子镀/磁控溅射/UV电镀等）、客户维度核算利润，实现报价有据、成本透明。",
+        "priority": "should",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "B2B按件计费模式，多种工艺类型并存，行业痛点库中成本核算（报价靠经验、利润黑箱）为典型痛点，推演为should需求", "raw": null },
+        "status": "active",
+        "module": "成本管理",
+        "relatedPainPoints": ["成本核算：成本算不清、报价靠经验、利润黑箱"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-006",
+        "category": "functional",
+        "title": "订单管理模块",
+        "description": "支持工单创建（含客户、来料信息、工艺类型、数量、交期要求）、状态流转（待排程/生产中/质检中/已完成）、优先级设置和快速查询，工单与生产批次关联。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "REQ-001订单可视化的功能拆解，支撑订单全流程跟踪", "raw": null },
+        "status": "active",
+        "module": "订单管理",
+        "relatedPainPoints": ["订单管理：订单靠电话/微信、交期难跟踪"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-007",
+        "category": "functional",
+        "title": "质检记录与批次追溯模块",
+        "description": "各工艺节点记录质检结果（合格/不合格/返工），系统生成批次编码关联工单、设备、操作人员、关键工艺参数（真空度/温度/时间），支持扫码查询历史批次。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "REQ-002质量追溯的功能拆解，满足批次追溯和客诉处理需求", "raw": null },
+        "status": "active",
+        "module": "质量管理",
+        "relatedPainPoints": ["质量管理：质检靠人工、追溯困难、客诉处理慢"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-008",
+        "category": "functional",
+        "title": "生产进度看板",
+        "description": "展示各工单当前所处工序和预计完成时间，支持日/周视图，班组长可快速了解所有在制订单进度，便于协调资源和响应插单需求。",
+        "priority": "should",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "60人规模小型企业，无MES，排产靠Excel推演进度不透明痛点，对应轻量级可视化看板", "raw": null },
+        "status": "active",
+        "module": "生产管理",
+        "relatedPainPoints": ["生产管理：排产靠Excel、进度不透明、插单混乱"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-009",
+        "category": "functional",
+        "title": "客户自助查询门户",
+        "description": "客户可通过网页或微信小程序查看自己订单的当前状态和预计交付时间，减少跟单员的重复答复，提升客户体验和粘度。",
+        "priority": "could",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "B2B客户关系维护，提升服务差异化，年加工200万件意味着客户数量较多，推演客户门户为加分项", "raw": null },
+        "status": "active",
+        "module": "订单管理",
+        "relatedPainPoints": ["订单管理：订单靠电话/微信、交期难跟踪"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-010",
+        "category": "technical",
+        "title": "SaaS轻量化部署",
+        "description": "小型民营企业60人规模，IT基础薄弱，无需本地部署和维护，系统通过浏览器或手机APP访问，支持按需订阅模式降低初期投入。",
+        "priority": "must",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "规模60人小型企业，无专门IT团队，结合profile中'可能需要轻量级管理工具'推演SaaS为技术必须约束", "raw": null },
+        "status": "active",
+        "module": "技术架构",
+        "relatedPainPoints": [],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-011",
+        "category": "technical",
+        "title": "扫码追溯能力",
+        "description": "工单/批次使用条码或二维码标识，现场通过扫码完成报工和质检记录录入，兼容PDA或普通手机，降低操作门槛。",
+        "priority": "should",
+        "confidence": "low",
+        "source": { "type": "profile-inference", "detail": "质量追溯（REQ-007）的配套技术需求，批次追溯需要扫码标识，对应行业痛点库条码追溯", "raw": null },
+        "status": "active",
+        "module": "技术架构",
+        "relatedPainPoints": ["质量管理：条码追溯"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      }
+    ],
+    "users": [
+      {
+        "role": "生产主管",
+        "description": "技术团队约8人，推测包含生产负责人，统筹排产和现场管理",
+        "mainTasks": ["查看生产看板和订单进度", "协调工序和插单处理", "设备运行状态监控"]
+      },
+      {
+        "role": "质检员",
+        "description": "品管团队约4人，负责各工序的质检记录录入和不良品管理",
+        "mainTasks": ["记录镀膜前后质检结果", "录入批次追溯信息", "处理不良品登记"]
+      },
+      {
+        "role": "跟单员/销售内勤",
+        "description": "对接客户订单录入和交期跟进，无专职跟单员时由销售内勤兼任",
+        "mainTasks": ["客户订单录入系统", "跟进交期和回复客户进度", "处理打样订单"]
+      },
+      {
+        "role": "老板（李进汉）",
+        "description": "法定代表人/实际控制人，最终决策人，技术出身，关注整体运营",
+        "mainTasks": ["查看经营数据（产量/良率/交期达成）", "审批重大订单和报价", "成本和利润分析"]
+      }
+    ],
+    "scope": {
+      "inScope": [
+        "工单全生命周期管理（创建→排程→生产→质检→出货）",
+        "批次质量追溯（批次编码+工艺参数+设备+操作人员）",
+        "生产进度可视化看板",
+        "质检记录电子化管理",
+        "轻量级设备运行时长记录",
+        "按订单维度的加工量和费用统计"
+      ],
+      "outOfScope": [
+        "复杂APS高级排程（首期轻量方案以工单优先级管理替代）",
+        "财务凭证自动生成和总账管理",
+        "与ERP系统的深度集成",
+        "预测性设备维护（高级分析功能）"
+      ],
+      "futureScope": [
+        "APS智能排程优化",
+        "供应商来料质量管理（SRM）",
+        "与客户端系统的API对接",
+        "SPC过程统计分析"
+      ],
+      "phases": [
+        {
+          "phase": 1,
+          "name": "订单与追溯",
+          "scope": "工单管理 + 批次追溯 + 质检记录",
+          "priority": "优先上线，验证核心痛点"
+        },
+        {
+          "phase": 2,
+          "name": "生产与设备",
+          "scope": "生产看板 + 设备运行时长 + 基础OEE",
+          "priority": "基于一期使用情况推进"
+        },
+        {
+          "phase": 3,
+          "name": "客户与扩展",
+          "scope": "客户自助门户 + 成本核算 + 报表分析",
+          "priority": "深化客户关系和经营分析能力"
+        }
+      ],
+      "priorityMatrix": [
+        { "must": ["REQ-001", "REQ-002", "REQ-003", "REQ-006", "REQ-007", "REQ-010"], "should": ["REQ-004", "REQ-005", "REQ-008", "REQ-011"], "could": ["REQ-009"] }
+      ]
+    },
+    "constraints": {
+      "budget": { "total": "", "flexibility": "未知" },
+      "timeline": { "expectedStart": "", "expectedGoLive": "" }
+    },
+    "successCriteria": {},
+    "risksAndAssumptions": {
+      "risks": [
+        {
+          "description": "员工数字化意愿和能力不足，PVD镀膜操作工习惯纸质记录，系统上线后数据录入率低",
+          "impact": "高",
+          "mitigation": "系统设计极简化，提供移动端扫码快速录入，安排现场培训并设定过渡期"
+        },
+        {
+          "description": "订单变更和插单频繁，系统排产逻辑无法适应现场实际习惯，导致现场绕过系统继续用Excel",
+          "impact": "中",
+          "mitigation": "首期不做复杂排程，以工单优先级管理为主；先上线追踪再看数据，逐步迭代"
+        },
+        {
+          "description": "质量追溯链路过长，涉及多种工艺设备和多道工序，数据采集节点多，前期实施工作量大",
+          "impact": "中",
+          "mitigation": "首期聚焦核心追溯节点（真空镀膜关键参数），二期再扩展到完整工艺链"
+        }
+      ],
+      "assumptions": [
+        {
+          "description": "假设老板李进汉对数字化转型有基本认知，科技型中小企业标签说明企业主有一定创新意识",
+          "impact": "高"
+        },
+        {
+          "description": "假设当前订单规模（约200万件/年）带来的管理复杂度已超出人工处理极限，数字化投入ROI合理",
+          "impact": "中"
+        },
+        {
+          "description": "假设客户（B2B五金/餐具/渔具等厂商）对订单可视化有需求，愿意配合使用客户门户",
+          "impact": "中"
+        }
+      ],
+      "dependencies": []
+    },
+    "solutionDirection": {
+      "overallApproach": "针对小型PVD镀膜加工企业，提供轻量级SaaS化的订单与生产管理方案，以工单管理+批次追溯为核心，一期快速上线验证核心痛点，二三期逐步扩展。",
+      "recommendedApproach": null,
+      "technicalDirection": null,
+      "implementationStrategy": null,
+      "nextSteps": []
+    },
+    "pendingQuestions": [
+      {
+        "id": "PQ-001",
+        "category": "业务",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "目前订单和生产进度是怎么跟的？用Excel还是别的工具？",
+        "purpose": "确认当前订单管理方式，验证REQ-001（订单可视化）的真实痛点强度",
+        "expectedDirection": "如果大量靠电话/微信和记忆跟踪，说明痛点强烈；若有Excel台账则痛点中等，可重点介绍系统优势",
+        "targetPerson": "跟单员或生产主管",
+        "relatedNeedIds": ["REQ-001", "REQ-006"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-002",
+        "category": "业务",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "客户投诉或批次质量问题发生时，现在是怎么查原因的？",
+        "purpose": "验证REQ-002（质量追溯）的紧迫程度，了解当前追溯能力",
+        "expectedDirection": "若追溯困难、耗时很长，说明该需求must级别高；若已有基本台账可快速定位，则优先级可降低",
+        "targetPerson": "质检负责人或老板",
+        "relatedNeedIds": ["REQ-002", "REQ-007"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-003",
+        "category": "预算",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "今年在数字化或管理系统这块预算大概是什么量级？",
+        "purpose": "判断项目可行性和推进节奏，确定推荐方案档位",
+        "expectedDirection": "有明确预算→可按需匹配功能模块；无预算→先免费试用或分阶段引入；预算未知→引导客户了解行业投入参考范围",
+        "targetPerson": "老板（李进汉）",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-004",
+        "category": "时间",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "希望什么时候能看到效果？今年内要上线吗？",
+        "purpose": "判断项目紧迫度，规划分期上线节奏",
+        "expectedDirection": "年内上线→推荐一期快速上线方案；无明确时间→可从容规划但需警惕项目搁置",
+        "targetPerson": "老板（李进汉）",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-005",
+        "category": "决策",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "除了您之外，这个项目还需要谁参与评估和拍板？",
+        "purpose": "确认决策链，避免单点推进后期被否决",
+        "expectedDirection": "纯老板决策→推进快；涉及技术负责人或外部顾问→需准备多角色材料",
+        "targetPerson": "老板（李进汉）",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-006",
+        "category": "业务",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "打样订单和量产订单目前是怎么分开管理的？打样转量产的过程有没有数据关联？",
+        "purpose": "验证打样周期管理需求（REQ-003），评估打样-量产数据打通的价值",
+        "expectedDirection": "打样与量产数据割裂→说明需要关联管理，是系统差异化价值点",
+        "targetPerson": "跟单员或生产主管",
+        "relatedNeedIds": ["REQ-003", "REQ-006"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-007",
+        "category": "业务",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "设备（真空镀膜机）的稼动率和故障情况目前是怎么记录的？有没有出现过设备问题影响订单交付的情况？",
+        "purpose": "验证REQ-004（设备监控）需求强度，收集具体案例作为破冰素材",
+        "expectedDirection": "无记录→系统价值高；有手工记录→说明有基础，可引导升级；曾因设备故障延误→强需求",
+        "targetPerson": "生产主管或技术负责人",
+        "relatedNeedIds": ["REQ-004"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-008",
+        "category": "技术",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "现在工厂里有没有扫码设备（如PDA）？员工用手机熟练吗？",
+        "purpose": "评估扫码追溯（REQ-011）和移动端落地的可行性",
+        "expectedDirection": "有PDA→直接对接；无设备但员工用智能手机→推荐手机扫码方案；数字化基础弱→需要极简设计",
+        "targetPerson": "生产主管或IT接口人",
+        "relatedNeedIds": ["REQ-011"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-009",
+        "category": "业务",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "现在一共有多少台镀膜设备？每台设备大概每天能处理多少件？",
+        "purpose": "了解产能规模，辅助方案配置和OEE计算基准设定",
+        "expectedDirection": "产能数据具体→可设置合理的OEE基线和目标；数据模糊→引导建立基准测量机制",
+        "targetPerson": "生产主管",
+        "relatedNeedIds": ["REQ-004"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-010",
+        "category": "业务",
+        "priority": "选问",
+        "stage": "closing",
+        "question": "我们今天聊的这几个问题，您觉得哪个是现在最想解决的？",
+        "purpose": "收口确认核心需求，指导一期范围和价值主张",
+        "expectedDirection": "明确优先级→聚焦一期MVP；多需求并列→引导排优先级",
+        "targetPerson": "老板（李进汉）",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      }
+    ],
+    "completionRate": {
+      "overall": 22,
+      "byCategory": { "business": 20, "functional": 20, "technical": 20 },
+      "blockers": ["REQ-001（订单全流程可视化）confidence=low，must级别需求待首访验证", "REQ-002（镀膜工艺质量追溯）confidence=low，must级别需求待首访验证", "REQ-003（打样周期与交期管理）confidence=low，must级别需求待首访验证"]
+    }
+  }
+}
